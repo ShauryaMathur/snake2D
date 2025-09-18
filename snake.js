@@ -20,7 +20,7 @@ export class Snake{
         let newX = this.head.x + dx;
         let newY = this.head.y + dy;
 
-        if(newX === 0 || newY === 0 || newX === this.boundaryCoordinateMax || newY === this.boundaryCoordinateMax){
+        if(newX <= 0 || newY <= 0 || newX >= this.boundaryCoordinateMax || newY >= this.boundaryCoordinateMax){
             throw new Error("Game Over")
         }
         this.head.x = newX
@@ -46,7 +46,7 @@ export class Snake{
         return false
     }
 
-    changeSpeed(){
+    increaseSpeed(){
         this.speed += 1
         this.directions = getDirections(this.speed)
         this.boundaryCoordinateMax = WIDTH - this.speed

@@ -49,7 +49,7 @@ function gameLoop(){
 
             if(player.score % 100 === 0){
                 // let speedIncrement = player.score / 100;
-                snake.incrementSpeed();
+                snake.increaseSpeed();
             }
 
             isFoodAvailable = foodGenerator.generateFood();
